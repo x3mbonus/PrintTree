@@ -52,14 +52,14 @@ void PrintTreeHorisontal(std::shared_ptr<Node> node, int level)
 {
 	if (node)
 	{
-		if (node->Right)
+		if (node->Left)
 		{
 			PrintTreeHorisontal(node->Left, level + 1);
 		}
 
 		std::cout << std::right << std::setw(3 * (level + 1)) << node->Value << std::endl;
 
-		if (node->Left)
+		if (node->Right)
 		{
 			PrintTreeHorisontal(node->Right, level + 1);
 		}
@@ -175,6 +175,7 @@ std::shared_ptr<Node> CreateTree(int number, int value)
 
 ****************************************
 
+    12
   1
 ****************************************
 
@@ -285,6 +286,8 @@ std::shared_ptr<Node> CreateTree(int number, int value)
            1
              13
 ****************************************
+
+Для продолжения нажмите любую клавишу . . .
 
 Для продолжения нажмите любую клавишу . . .
 */
