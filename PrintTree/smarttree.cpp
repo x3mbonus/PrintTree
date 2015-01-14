@@ -32,6 +32,7 @@ struct Node
 
 void PrintTree(std::shared_ptr<Node> head);
 std::shared_ptr<Node> CreateTree(int number, int value = 0);
+void PrintTreeHorisontal(std::shared_ptr<Node> node, int level = 0);
 
 int main()
 {	
@@ -41,8 +42,28 @@ int main()
 		std::cout << std::string(10, '*') << std::setfill('*') << std::left << std::setw(30) << " Tree " + std::to_string(i) << std::setfill(' ') << std::endl;
 		PrintTree(tree);
 		std::cout << std::string(40, '*') << std::endl << std::endl;
+		PrintTreeHorisontal(tree);
+		std::cout << std::string(40, '*') << std::endl << std::endl;
 	}
 	system("pause");
+}
+
+void PrintTreeHorisontal(std::shared_ptr<Node> node, int level)
+{
+	if (node)
+	{
+		if (node->Right)
+		{
+			PrintTreeHorisontal(node->Left, level + 1);
+		}
+
+		std::cout << std::right << std::setw(3 * (level + 1)) << node->Value << std::endl;
+
+		if (node->Left)
+		{
+			PrintTreeHorisontal(node->Right, level + 1);
+		}
+	}
 }
 
 void PrintTree(std::shared_ptr<Node> head)
