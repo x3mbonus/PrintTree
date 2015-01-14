@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <vector>
 #include <iomanip>
 #include <string>
@@ -181,7 +181,7 @@ Node * CreateTree(int number)
 	}
 	return result;
 }
-
+*/
 
 
 /*
