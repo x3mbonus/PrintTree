@@ -13,31 +13,31 @@ struct Node
 	Node (int value) : 
 		Value(value)
 	{
-		//std::cout << "Node (int value)" << std::endl;
+		std::cout << "Node (int value)" << std::endl;
 	}
 	Node (const Node &)
 	{
-		//std::cout << "Node (const Node &)" << std::endl;
+		std::cout << "Node (const Node &)" << std::endl;
 	}
 	
 	Node (Node &&)
 	{
-		//std::cout << "Node (Node &&)" << std::endl;
+		std::cout << "Node (Node &&)" << std::endl;
 	}
 	~Node()
 	{
-		//std::cout << "~Node()" << std::endl;
+		std::cout << "~Node()" << std::endl;
 	}
 };
 
-void PrintTree(std::shared_ptr<Node> head);
+void PrintTree(const std::shared_ptr<Node> & head);
 std::shared_ptr<Node> CreateTree(int number, int value = 0);
-void PrintTreeHorisontal(std::shared_ptr<Node> node, int level = 0);
+void PrintTreeHorisontal(const std::shared_ptr<Node> & node, int level = 0);
 
 int main()
 {	
 	for(int i = 0; i < 7; ++ i)
-	{		
+	{
 		auto tree = CreateTree(i);
 		std::cout << std::string(10, '*') << std::setfill('*') << std::left << std::setw(30) << " Tree " + std::to_string(i) << std::setfill(' ') << std::endl;
 		PrintTree(tree);
@@ -48,7 +48,7 @@ int main()
 	system("pause");
 }
 
-void PrintTreeHorisontal(std::shared_ptr<Node> node, int level)
+void PrintTreeHorisontal(const std::shared_ptr<Node> & node, int level)
 {
 	if (node)
 	{
@@ -66,7 +66,7 @@ void PrintTreeHorisontal(std::shared_ptr<Node> node, int level)
 	}
 }
 
-void PrintTree(std::shared_ptr<Node> head)
+void PrintTree(const std::shared_ptr<Node> & head)
 {
 	if (!head)
 	{
